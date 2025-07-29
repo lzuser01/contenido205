@@ -1,64 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sono Bisque Doll wa Koi wo Suru</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Happy Gilmore</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 <style>
-.scrollbar-hide::-webkit-scrollbar {
-display: none;
-}
-.scrollbar-hide {
--ms-overflow-style: none;
-scrollbar-width: none;
-}
-body, html {
+html, body {
+height: 100%;
 margin: 0;
 padding: 0;
-height: 100%;
 }
-body::before {
-content: "";
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-image: url('https://image.tmdb.org/t/p/w500//gWPK2RIVJ6i3myf7Xdw8DqlznT8.jpg');
+
+body {
+background: url('https://image.tmdb.org/t/p/w500//As7NuiDRM4EO7LlJn2u8JWWsABp.jpg') no-repeat center center fixed;
 background-size: cover;
 background-position: center;
-z-index: -2;
+background-attachment: fixed;
 }
-body::after {
-content: "";
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.75);
-z-index: -1;
-}
-#iframe-principal {
-width: 100%;
-height: 220px;
-border: none;
-background: black;
-}
-#contenedor-video {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-z-index: 10;
-}
-.capitulo-seleccionado {
-background-color: #FF0000 !important;
-color: #fff !important;
-font-weight: bold;
-border-bottom: none !important;
+
+.overlay {
+min-height: 100vh;
+background-color: rgba(18, 18, 18, 0.85);
+display: flex;
+flex-direction: column;
 }
 </style>
 
@@ -73,230 +39,141 @@ gtag('config', 'G-622CWCXV7F');
 
 <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
 </head>
-<body class="text-white font-sans leading-relaxed">
+<body class="text-white font-sans">
+<div class="overlay min-h-screen">
+<div class="max-w-4xl mx-auto p-4 pb-24">
 
-
-<div id="contenedor-video" class="relative">
-
-<iframe id="iframe-principal" allow="fullscreen" allowfullscreen></iframe>
-
-<a href="https://zinecia.github.io/Home" aria-label="Volver" class="absolute top-3 left-3 text-white text-2xl z-20">
-<i class="fas fa-arrow-left"></i>
-</a>
-
-<!-- Bloqueador de clics -->
-<div class="absolute top-0 left-0 w-full h-full z-10" style="pointer-events: none;"></div>
+<!-- Iframe Video -->
+<div class="rounded-md overflow-hidden relative aspect-video bg-black">
+<iframe
+class="w-full h-full"
+src="https://reproductor-vip.blogspot.com/p/op-pro.html?movieName=SGFwcHkgR2lsbW9yZQ==&videoUrl=aHR0cHM6Ly9senJkcmd6MDEuZ2l0aHViLmlvL3dlYj9wbGF5ZXI9andwbCZwcm92aWRlcj1yYW5kJmZvcm1hdD12aWRlbyUyRm1wNCZsaW5rPWh0dHBzOi8vcnVtYmxlLmNvbS9obHMtdm9kLzZ1am9oay9wbGF5bGlzdC5tM3U4&imageUrl=aHR0cHM6Ly9pbWFnZS50bWRiLm9yZy90L3Avb3JpZ2luYWwvQXM3TnVpRFJNNEVPN0xsSm4ydThKV1dzQUJwLmpwZw=="
+data-alternativo="https://ghbrisk.com/e/pg4mjturhv7e"
+title="" frameborder="0"
+sandbox="allow-scripts allow-same-origin allow-presentation"
+allowfullscreen>
+</iframe>
 </div>
 
+<!-- Movie Info Section -->
+<div class="flex space-x-4 mt-4 bg-[#1a1a1a] p-4 rounded-md items-center" data-id="9614">
+<div class="flex items-center justify-center w-[110px] h-[160px] flex-shrink-0">
+<img alt="" class="rounded-lg w-full h-full object-cover" src="https://image.tmdb.org/t/p/w500//epFP29rGrLPseuKxpz3mGKr23Do.jpg" />
+</div>
 
-<!-- CONTENIDO -->
-<div class="px-4 pt-60 pb-4 space-y-4">
+<div class="flex-1 text-white">
+<h3 class="text-xl font-semibold">Happy Gilmore</h3>
+<p class="text-gray-300 italic text-sm">Publicado por: Lz-1</p>
+<div class="flex flex-wrap items-center space-x-2 text-xs text-gray-400 mt-1">
+<span>United States of America</span>
+<span>Duración: 92 Minutos</span>
+<span>Año: 1996</span>
+</div>
+<div class="flex items-center mt-3 space-x-3">
+<div id="rating-value" class="bg-[#2a2a2a] rounded-md px-3 py-1 text-lg font-semibold text-white">6.7</div>
+<div id="star-container" class="flex space-x-1 text-yellow-400 text-lg"></div>
+</div>
+<div class="flex space-x-6 text-xs text-gray-400 mt-3">
+<span>Comedia,</span>
+</div>
+</div>
+</div>
 
-<div class="flex items-center justify-between">
-<h1 class="text-xl sm:text-2xl font-bold">Sono Bisque Doll wa Koi wo Suru T<span id="temp-titulo">1</span></h1>
-<button aria-label="Favorito" class="bg-[#1f1f1f] px-3 py-1 rounded text-sm flex items-center gap-2">
+<!-- Botones -->
+<div class="flex flex-wrap space-x-2 mt-4 relative">
+<button id="info-btn" class="bg-red-600 text-white px-4 py-2 rounded text-sm font-semibold flex items-center space-x-1" type="button">
+<i class="fas fa-info-circle"></i><span>Info</span>
+</button>
 
+<button id="cast-btn" class="bg-gray-700 text-gray-400 px-4 py-2 rounded text-sm font-semibold" title="Transmitir Pantalla">
+<i class="fas fa-tv"></i>
+</button>
+
+<button id="download-btn" class="bg-gray-700 text-gray-400 px-4 py-2 rounded text-sm font-semibold" title="Descargar">
+<i class="fas fa-download"></i>
 </button>
 </div>
 
-<!-- Calificación y género -->
-<div class="flex flex-wrap items-center gap-3 text-sm text-gray-400">
-<span><strong class="text-[#FF7F00]">8.5</strong> / 10</span>
-<span class="text-white">•</span>
-<span>Animación,Comedia,Drama,</span><span class="text-white">•</span><span>2022</span>
-</div>
-
-<!-- Selector de Temporadas -->
-<div class="flex items-center gap-3">
-<label for="temporada" class="text-sm text-gray-300">Temporada:</label>
-<select id="temporada" class="bg-[#1f1f1f] text-white px-3 py-1 rounded text-sm">
-<option value="1">Temporada 1</option>
-
-
-</select>
-</div>
-
-
-<div class="flex space-x-2 overflow-x-auto scrollbar-hide pb-1" id="lista-capitulos">
-
-</div>
-
 <!-- Sinopsis -->
-<div class="bg-[#1e1e1e] rounded-lg p-4 text-sm text-gray-300 leading-relaxed">
-<p><span class="font-semibold text-white">Sinopsis:</span>Gojo Wakana es un estudiante de preparatoria que quiere convertirse en un maestro del tradicional arte de crear muñecas Hina. Aunque adora ese arte, no sabe nada de las últimas tendencias y eso hace que le cueste encajar con sus compañeros de clase. Los más populares de la clase, en especial una chica llamada Marin Kitagawa, parecen creer que él vive en un mundo aparte. Todo esto cambia por completo un día cuando Marin comparte un secreto inesperado con él y hace que sus dos mundos coincidan.</p>
+<div id="sinopsis" class="mt-4 bg-[#1a1a1a] p-4 rounded-md">
+<h4 class="text-white text-lg font-semibold mb-2">Sinopsis</h4>
+<p class="text-gray-300 text-sm leading-relaxed">Happy Gilmore era un fanático jugador de hockey y ahora no tiene objetivos en su vida. Cuando su novia le abandona y a su madre la echan del piso en el que vive por no pagar el alquiler, decide dedicarse a jugar al golf en torneos profesionales con la esperanza de reunir el suficiente dinero para cambiar su situación. Resulta que Happy tiene un potentísimo swing que manda la pelota a 400 yardas de distancia. Además, debido a su alocado temperamento, comienza a causar furor entre los medios de comunicación por sus extravagantes payasadas en los campos de golf.</p>
 </div>
 
+</div>
 </div>
 
 <script>
-var serieId = "123249";
-var temporadaSelect = document.getElementById('temporada');
-var listaCapitulos = document.getElementById('lista-capitulos');
-var tempTitulo = document.getElementById('temp-titulo');
-var btnFavorito = document.querySelector('button[aria-label="Favorito"]');
-var iconoCorazon = btnFavorito.querySelector('i');
-var iframePrincipal = document.getElementById('iframe-principal');
+var rating = 6.7;
+var starContainer = document.getElementById('star-container');
+var fullStars = Math.floor(rating / 2);
+var halfStar = rating % 2 >= 1;
 
-var serieActual = {
-id: serieId,
-titulo: "Sono Bisque Doll wa Koi wo Suru",
-temporada: temporadaSelect.value,
-poster: "https://image.tmdb.org/t/p/w500//5qk1GjRczsJQLChZZvVdH9i37nW.jpg"
-};
-
-var videosPorCapitulo = {
-"1": {
-"1": "https://unlimplay.com/embed/?WlJwNi9OMmJtMDd0MU9VVXRLMEp0M1pIL2xPYXpIYUZmOWsxQnlMZzVnVjVkQXpXSmxrUGhydGIyOHB0NWFQbFMrVXo1SFB6blBLZXRwK3lBQzExaldTL0dvb0k2S29DeEZzRUdZMTFpbm1JbjBVV3NKR3E5NEhveXVPRmFMTDE,",
-  "2": "https://unlimplay.com/embed/?K21aT05kR2hlR3FzeUVZRzZPNWV1TUhWdWkrbHprU3dXdlYvNVN2dWZ5cmh0NVhmbG5Pa0JhTnplaE5HQW54OVMxeGNIZ284RlJKY1Fxdklody9BYUorL1U0dWFQWnRoZWI1ZmV1STR1UDE0T3U3YlJ3MmpUZlJTakUxMXMwZFc,",
-  "3": "https://unlimplay.com/embed/?N3phZ2lkcEdGT1pHTjdrc2EyREdBZDB3dHptWExZZkZSQUJNbEF5Z1J5VkR6WmJRdEF4dE1qMTgrUnZHL1ZOR0l3dVllQTFTQkp6VWxsdmVhOUVXclRoeUZ1T2ppZ2ZtRFdzMUtDNW42VHdWSFVhUnRnTURqb2VDTU9mVmlIV2E,",
-  "4": "https://unlimplay.com/embed/?UXU4OVVsN0hBdlA3NmdaamtuZmw0dW1KRldyOHNCMU9FcVMyYy9UZzNJYzk3NDlYYzVOVGdxWUFxV255Y2NBVjZZRk1ZNVdHM0Y3VVkwOVNscEtMRVpLZmowcHlEQ3lXV1RlUDd4MzdXN25QMEUzd2IydWI3RXMxeWc2MHRRaHA,",
-  "5": "https://unlimplay.com/embed/?cHR2Z0tPVU1sUXh5T3FIWXQvR1ZaU1NlKzVNL2J2Y2VYckRvUjdpcHpoTXBnQ0E3ZHdCL1krWXhkSDlOMHRINnZ0QTFHS0hMNTA4elJUZUk1dDdlUWYrUGllZWpkeTZHSi9RRXk0K1AwQXZpalozRjBFUm9qdXhIZXVwR2JwWnQ,",
-  "6": "https://unlimplay.com/embed/?NFJaY2dsQUJRMW00VWFsWjRGZlhMT2h0c0tBR3VReEIvT2EyOWh6U1dlemRCQm9NQmp4aFNlL3VYcy9wZGNMY0lKYW9TYXhCQUZoMzkzZmJybG1FcmdReUtWN1lKQ2tYN25YajlOZFBiTTlYZzZ5MXJJS09IUkx1ejBxVUhabGk,",
-  "7": "https://unlimplay.com/embed/?SllsN0NqMHgvd2hqNXVVeER3VWJaK05oM2RJM0Nka2NqN3A0anNTcnZFSXlLbzJuQUYvaFptaWRCakZHSzcrdE9ob0NKR1FsQWk5Y3ZnVWRZejdLeVRjYWRNcVJ4VXQ1WXR4VFF2S09DVzIydEVpS1k4b3cyVjR1bkdZUnBUUkI,",
-  "8": "https://unlimplay.com/embed/?bVFlcWtPdTVoZXNqeWxjdlhHdi9GTEYxS3pxczhRRE5nT1FON3VqRTlMa3B2WUR4N2Z2ZkJCSUh2NlFKU2VVejdYdnE4UVc0WkFLTWdQQXpaY1cxb3R6U0I4ZklQNkhMVzdQRUE2YVZNbUp1N3dtSkttWlhEZ0k4aDNnTjJHRTk,",
-  "9": "https://unlimplay.com/embed/?VThiaDlFTFNySlJhc2lUSlJqZ3c5U2taQzcrQjFRNWU4dy90SmZyYTVJc3RXdWpRd0VuUkIvdmZPQjdUVE42R09zWXRRTUtGa2x1aXRXaWduMkE4bmhESDBSS2hua3pQS2EwYy9HeVZ2Y0FTU2VNanU2SGlVZXBpeWJwRzBINnU,",
-  "10": "https://unlimplay.com/embed/?ZnArY0NkTFBML2hieGZ1S1pkSWMwVC9Cbkp2YXB1bStjamIzT1ZmUjBPTHhzQWlDZFh2cjFKS2xBT3BEWnB1R3k2RGdkenVDVFo0bVFBaDNqRmNZcmVZUHk2ZjFoa1UrMXdjdFNhbCt2UFFndmhzQTdvYmF0SkpyTXJvamdJSjA,",
-  "11": "https://unlimplay.com/embed/?WmhWMXYvSjJOQWd6bSs4STFuc0lmdDgxeWRTUXpWSUxuMHJLWlU4b2FSSmR6N0g3QllqT0NWaDZ2REJSSjF5S0d4VmcySmQxSkRjZWxEb0pJbkcxZCtQc2FTUzNQTkl4U0JtU3pyWm1iY3crVFRTMVd2V25KejZrTFFDOGN0a0Y,",
-  "12": "https://unlimplay.com/embed/?UjFvVG8zUWhjY051djkxMEl1ckJEOVNnQXFsdytkN0FYZnRvUmVoSlVOSmM4MVJJYXZTbkZwLzJjbzJTOWJMZ2hwLytWYkNtQXFEcWlHclhCUVhmT1c5UHpvU2VXSEE2WGU4MWZyazg2L1hETGF2bXQ3WDV4MzR2T3M0enlnVnc,",
-},
-
-};
-
-function cargarFavoritos() {
-var favs = localStorage.getItem('seriesFavoritas');
-return favs ? JSON.parse(favs) : [];
-}
-
-function guardarFavoritos(favoritos) {
-localStorage.setItem('seriesFavoritas', JSON.stringify(favoritos));
-}
-
-function esFavorito(serie, favoritos) {
-return favoritos.some(function(fav) {
-return fav.id === serie.id && fav.temporada === serie.temporada;
-});
-}
-
-function actualizarBotonFavorito() {
-var favoritos = cargarFavoritos();
-if (esFavorito(serieActual, favoritos)) {
-btnFavorito.classList.add('bg-[#FF7F00]');
-iconoCorazon.classList.add('fas');
-iconoCorazon.classList.remove('far');
+for (var i = 0; i < 5; i++) {
+var star = document.createElement('i');
+if (i < fullStars) {
+star.className = 'fas fa-star text-yellow-400';
+} else if (i === fullStars && halfStar) {
+star.className = 'fas fa-star-half-alt text-yellow-400';
 } else {
-btnFavorito.classList.remove('bg-[#FF7F00]');
-iconoCorazon.classList.remove('fas');
-iconoCorazon.classList.add('far');
+star.className = 'fas fa-star text-gray-400';
 }
+starContainer.appendChild(star);
 }
 
-btnFavorito.addEventListener('click', function() {
-var favoritos = cargarFavoritos();
-if (esFavorito(serieActual, favoritos)) {
-favoritos = favoritos.filter(function(fav) {
-return !(fav.id === serieActual.id && fav.temporada === serieActual.temporada);
+document.getElementById('rating-value').innerText = rating.toFixed(1);
+
+var infoBtn = document.getElementById('info-btn');
+var sinopsis = document.getElementById('sinopsis');
+var castBtn = document.getElementById('cast-btn');
+var downloadBtn = document.getElementById('download-btn');
+var iframe = document.querySelector('iframe');
+var altURL = iframe.getAttribute('data-alternativo') || iframe.src;
+var cleanAltURL = altURL.replace('https://', '').replace('http://', '');
+
+infoBtn.addEventListener('click', function () {
+sinopsis.scrollIntoView({ behavior: 'smooth' });
 });
-} else {
-favoritos.push(Object.assign({}, serieActual));
-}
-guardarFavoritos(favoritos);
-actualizarBotonFavorito();
+
+castBtn.addEventListener('click', function () {
+window.open('intent://' + cleanAltURL + '#Intent;package=com.instantbits.cast.webvideo;scheme=https;end', '_blank');
 });
 
-function guardarTemporada(temporada) {
-localStorage.setItem("temporadaSeleccionada_" + serieId, temporada);
-}
+downloadBtn.addEventListener('click', function (e) {
+e.preventDefault();
+var plusIntent = 'intent://' + cleanAltURL + '#Intent;package=idm.internet.download.manager.plus;scheme=https;end';
+var normalIntent = 'intent://' + cleanAltURL + '#Intent;package=idm.internet.download.manager;scheme=https;end';
 
-function cargarTemporadaGuardada() {
-var temp = localStorage.getItem("temporadaSeleccionada_" + serieId);
-return temp ? temp : "1";
-}
+var tempIframe = document.createElement('iframe');
+tempIframe.style.display = 'none';
+document.body.appendChild(tempIframe);
 
-function guardarCapitulo(capitulo) {
-var key = "ultimoCapituloVisto_" + serieId + "_T" + serieActual.temporada;
-localStorage.setItem(key, capitulo);
-}
+tempIframe.src = plusIntent;
 
-function cargarCapituloGuardado() {
-var key = "ultimoCapituloVisto_" + serieId + "_T" + serieActual.temporada;
-var capituloGuardado = localStorage.getItem(key);
-var botones = listaCapitulos.getElementsByClassName('capitulo-btn');
-var encontrado = false;
+setTimeout(function () {
+tempIframe.src = normalIntent;
+}, 2000);
 
-for (var i = 0; i < botones.length; i++) {
-botones[i].className = botones[i].className.replace(' capitulo-seleccionado', '');
-if (botones[i].getAttribute('data-capitulo') === capituloGuardado) {
-botones[i].className += ' capitulo-seleccionado';
-botones[i].scrollIntoView({ behavior: 'smooth', inline: 'center' });
-cambiarVideo(capituloGuardado);
-encontrado = true;
-}
-}
-if (!encontrado) {
-cambiarVideo("1");
-}
-}
-
-function cambiarVideo(capitulo) {
-var temp = serieActual.temporada;
-var url = videosPorCapitulo[temp] && videosPorCapitulo[temp][capitulo];
-if (url) {
-iframePrincipal.src = url;
-guardarCapitulo(capitulo);
-}
-}
-
-function generarCapitulos(temporada) {
-listaCapitulos.innerHTML = '';
-var capitulosObj = videosPorCapitulo[temporada] || {};
-var total = Object.keys(capitulosObj).length;
-
-for (var i = 1; i <= total; i++) {
-var btn = document.createElement('button');
-btn.className = 'capitulo-btn px-4 py-2 rounded bg-[#2a2a2a] text-white';
-btn.setAttribute('data-capitulo', i.toString());
-btn.textContent = i;
-listaCapitulos.appendChild(btn);
-}
-agregarEventosCapitulos();
-cargarCapituloGuardado();
-}
-
-function agregarEventosCapitulos() {
-var botones = listaCapitulos.getElementsByClassName('capitulo-btn');
-for (var i = 0; i < botones.length; i++) {
-(function(index){
-botones[index].onclick = function() {
-for (var j = 0; j < botones.length; j++) {
-botones[j].className = botones[j].className.replace(' capitulo-seleccionado', '');
-}
-if (botones[index].className.indexOf('capitulo-seleccionado') === -1) {
-botones[index].className += ' capitulo-seleccionado';
-}
-botones[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
-cambiarVideo(botones[index].getAttribute('data-capitulo'));
-};
-})(i);
-}
-}
-
-temporadaSelect.onchange = function() {
-var temp = temporadaSelect.value;
-serieActual.temporada = temp;
-tempTitulo.textContent = temp;
-guardarTemporada(temp);
-generarCapitulos(temp);
-actualizarBotonFavorito();
-};
-
-window.onload = function() {
-var tempGuardada = cargarTemporadaGuardada();
-temporadaSelect.value = tempGuardada;
-serieActual.temporada = tempGuardada;
-tempTitulo.textContent = tempGuardada;
-generarCapitulos(tempGuardada);
-actualizarBotonFavorito();
-};
+setTimeout(function () {
+document.body.removeChild(tempIframe);
+}, 4000);
+});
 </script>
+
+<!-- Menú inferior -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#1E1E1E] flex justify-around items-center py-3 rounded-b-3xl text-white text-xs font-semibold z-50">
+<a href="javascript:window.history.back();" class="flex flex-col items-center space-y-1">
+<i class="fas fa-arrow-left text-xl"></i><span>Regresar</span>
+</a>
+<a href="https://zinecia.github.io/movie/" class="flex flex-col items-center space-y-1">
+<i class="fas fa-film text-xl"></i><span>Movies</span>
+</a>
+<a href="https://zinecia.github.io/serie/" class="flex flex-col items-center space-y-1">
+<i class="fas fa-tv text-xl"></i><span>Series</span>
+</a>
+<a href="https://zinecia.github.io/Buscador/" class="flex flex-col items-center space-y-1">
+<i class="fas fa-search text-xl"></i><span>Buscar</span>
+</a>
+</nav>
 </body>
 </html>
